@@ -1,0 +1,122 @@
+<resources>
+    <string name="app_name">Hardware Tools</string>
+
+    //Activity titles
+    <string name="title_activity_battery">Battery</string>
+    <string name="title_activity_camera">Camera</string>
+    <string name="title_activity_cpu">CPU</string>
+    <string name="title_activity_ram">RAM</string>
+    <string name="title_activity_wifi">WiFi</string>
+    <string name="title_activity_bluetooth">Bluetooth</string>
+    <string name="title_activity_flashlight">Flashlight</string>
+    <string name="title_activity_otg">OTG</string>
+    <string name="title_activity_storage">Storage</string>
+    <string name="title_activity_speaker">Speaker</string>
+    <string name="title_activity_nfc">NFC</string>
+    <string name="title_activity_brightness">Brightness</string>
+    <string name="title_activity_location">Location</string>
+    <string name="title_activity_compass">Compass</string>
+    <string name="title_activity_display">Display</string>
+    <string name="title_activity_vibration">Vibration</string>
+    <string name="title_activity_infraport">Infraport</string>
+    <string name="title_activity_fingerprint">Fingerprint</string>
+    <string name="title_activity_light">Light</string>
+    <string name="title_activity_proximity">Proximity</string>
+    <string name="title_activity_settings">Settings</string>
+
+    //In-activity title emoji
+    <string name="title_activity_battery_emoji">🔋 </string>
+    <string name="title_activity_camera_emoji">📸 </string>
+    <string name="title_activity_cpu_emoji">📈 </string>
+    <string name="title_activity_ram_emoji">📉 </string>
+    <string name="title_activity_wifi_emoji">📶 </string>
+    <string name="title_activity_bluetooth_emoji">📲 </string>
+    <string name="title_activity_flashlight_emoji">🔦 </string>
+    <string name="title_activity_otg_emoji">🔌 </string>
+    <string name="title_activity_storage_emoji">💾 </string>
+    <string name="title_activity_speaker_emoji">🔊 </string>
+    <string name="title_activity_nfc_emoji">💳 </string>
+    <string name="title_activity_brightness_emoji">💡 </string>
+    <string name="title_activity_location_emoji">🌍 </string>
+    <string name="title_activity_compass_emoji">🧭 </string>
+    <string name="title_activity_display_emoji">📱 </string>
+    <string name="title_activity_vibration_emoji">📳 </string>
+    <string name="title_activity_infraport_emoji">🪄 </string>
+    <string name="title_activity_fingerprint_emoji">☝️ </string>
+    <string name="title_activity_light_emoji">🕯️ </string>
+    <string name="title_activity_proximity_emoji">📏 </string>
+    <string name="title_activity_settings_emoji">⚙️ </string>
+
+    // Common units
+    <string name="unit_percent">%</string>
+    <string name="unit_celsius">℃</string>
+    <string name="unit_fahrenheit">℉</string>
+    <string name="supported">Supported 🥳</string>
+    <string name="not_supported">Not supported 😢</string>
+
+    //  BATTERY
+    <string name="charge_level">🔋 Charge level:</string>
+    <string name="charge_level_unit">%</string>
+    <string name="battery_full">Battery Full 💯</string>
+    <string name="charging_usb">Charging ⚡</string>
+    <string name="charging_ac">Charging ⚡</string>
+    <string name="charging_wireless">Charging Wirelessly ⚡</string>
+    <string name="discharging">Discharging 🪫</string>
+    <string name="not_charging">Not Charging 🚫</string>
+    <string name="battery_capacity_current">🛒 Current battery capacity:</string>
+    <string name="battery_capacity_current_unit">mAh</string>
+    <string name="battery_capacity_factory">🏭 Factory battery capacity:</string>
+    <string name="battery_capacity_factory_unit">mAh</string>
+    <string name="battery_voltage">⚡ Battery voltage:</string>
+    <string name="battery_voltage_unit">V</string>
+    <string name="battery_temperature">🌡️ Battery temperature:</string>
+    <string name="battery_charge_status">🔌 Charge status:</string>
+    <string name="battery_health">👨‍⚕️ Battery health:</string>
+    <string name="health_cold">Cold 🥶</string>
+    <string name="health_dead">Dead ☠️</string>
+    <string name="health_good">Good 😁</string>
+    <string name="health_overheat">Overheat 🥵</string>
+    <string name="health_over_voltage">Over Voltage 😵</string>
+    <string name="health_unknown">Unknown 🤨</string>
+    <string name="health_failure">Failure 🤕</string>
+    <string name="battery_technology">🔋 Type:</string>
+    <string name="charge_time_remaining">⌛ Remaining charging time:</string>
+    <string name="unit_hours">"h"</string>
+    <string name="unit_minutes">"min"</string>
+    
+    // CAMERA
+    <string name="back_camera">Back camera</string>
+    <string name="front_camera">Front camera</string>
+    <string name="megapixels">🎞️ Megapixels:</string>
+    <string name="megapixels_unit">MP</string>
+    <string name="resolution">🖼️ Resolution:</string>
+    <string name="resolution_unit">px</string>
+    <string name="focal_length">🔭 Focal length:</string>
+    <string name="focal_length_unit">mm</string>
+
+    //RAM
+    <string name="ram_total">📊 Total RAM:</string>
+    <string name="ram_total_unit">MB</string>
+    <string name="ram_available">🟢 Available RAM:</string>
+    <string name="ram_available_unit">MB</string>
+
+    //INFRAPORT
+    <string name="infraport_text">🪄 IR Blaster support:</string>
+
+    //NFC
+    <string name="nfc_text">💳 NFC support:</string>
+
+    //COMPASS
+    <string name="compass_text">⬆️ North:</string>
+
+    //LIGHT
+    <string name="light_text">🕯️ Light value:</string>"
+    <string name="light_unit">Lux</string>
+
+    //SETTINGS
+    <string name="save_button">💾 Save Order</string>
+    <string name="saved">Saved ✅</string>
+    <string name="drag_drop_info">Long press to drag and drop for reorder main screen layout\nChanges visible after app restart</string>
+
+
+</resources>

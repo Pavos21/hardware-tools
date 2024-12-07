@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-feature android:name="android.hardware.camera" android:required="false" />
+
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.HardwareTools"
+        tools:targetApi="31">
+        <activity
+            android:name=".Settings"
+            android:exported="false"
+            android:label="@string/title_activity_settings"
+            android:theme="@style/Theme.HardwareTools" />
+        <activity
+            android:name=".Proximity"
+            android:exported="false"
+            android:label="@string/title_activity_proximity"
+            android:theme="@style/Theme.HardwareTools" />
+        <activity
+            android:name=".Light"
+            android:exported="false"
+            android:label="@string/title_activity_light"
+            android:theme="@style/Theme.HardwareTools" />
+        <activity
+            android:name=".Fingerprint"
+            android:exported="false"
+            android:label="@string/title_activity_fingerprint"
+            android:theme="@style/Theme.HardwareTools" />
+        <activity
+            android:name=".Infraport"
+            android:exported="false"
+            android:label="@string/title_activity_infraport"
+            android:theme="@style/Theme.HardwareTools" />
+        <activity
+            android:name=".Vibration"
+            android:exported="false"
+            android:label="@string/title_activity_vibration"
+            android:theme="@style/Theme.HardwareTools" />
+        <activity
+            android:name=".Display"
+            android:exported="false"
+            android:label="@string/title_activity_display"
+            android:theme="@style/Theme.HardwareTools" />
+        <activity
+            android:name=".Compass"
+            android:exported="false"
+            android:label="@string/title_activity_compass"
+            android:theme="@style/Theme.HardwareTools" />
+        <activity
+            android:name=".Location"
+            android:exported="false"
+            android:label="@string/title_activity_location"
+            android:theme="@style/Theme.HardwareTools" />
+        <activity
+            android:name=".Brightness"
+            android:exported="false"
+            android:label="@string/title_activity_brightness"
+            android:theme="@style/Theme.HardwareTools" />
+        <activity
+            android:name=".Nfc"
+            android:exported="false"
+            android:label="@string/title_activity_nfc"
+            android:theme="@style/Theme.HardwareTools" />
+        <activity
+            android:name=".Speaker"
+            android:exported="false"
+            android:label="@string/title_activity_speaker"
+            android:theme="@style/Theme.HardwareTools" />
+        <activity
+            android:name=".Storage"
+            android:exported="false"
+            android:label="@string/title_activity_storage"
+            android:theme="@style/Theme.HardwareTools" />
+        <activity
+            android:name=".Otg"
+            android:exported="false"
+            android:label="@string/title_activity_otg"
+            android:theme="@style/Theme.HardwareTools" />
+        <activity
+            android:name=".Flashlight"
+            android:exported="false"
+            android:label="@string/title_activity_flashlight"
+            android:theme="@style/Theme.HardwareTools" />
+        <activity
+            android:name=".Bluetooth"
+            android:exported="false"
+            android:label="@string/title_activity_bluetooth"
+            android:theme="@style/Theme.HardwareTools" />
+        <activity
+            android:name=".Wifi"
+            android:exported="false"
+            android:label="@string/title_activity_wifi"
+            android:theme="@style/Theme.HardwareTools" />
+        <activity
+            android:name=".Ram"
+            android:exported="false"
+            android:label="@string/title_activity_ram"
+            android:theme="@style/Theme.HardwareTools" />
+        <activity
+            android:name=".Cpu"
+            android:exported="false"
+            android:label="@string/title_activity_cpu"
+            android:theme="@style/Theme.HardwareTools" />
+        <activity
+            android:name=".Camera"
+            android:exported="false"
+            android:label="@string/title_activity_camera"
+            android:theme="@style/Theme.HardwareTools" />
+        <activity
+            android:name=".Battery"
+            android:exported="false"
+            android:label="@string/title_activity_battery"
+            android:theme="@style/Theme.HardwareTools" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:theme="@style/Theme.HardwareTools">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
