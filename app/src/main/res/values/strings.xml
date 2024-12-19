@@ -100,6 +100,16 @@
     <string name="ram_available">🟢 Available RAM:</string>
     <string name="ram_available_unit">MB</string>
 
+    //DISPLAY
+    <string name="display_width">↔️ Width:</string>
+    <string name="display_height">↕️ Height:</string>
+    <string name="display_freq">📈 Frequency:</string>
+    <string name="display_diag">📏 Diagonal:</string>
+    <string name="display_dpi">📱 Density:</string>
+    <string name="display_orientation">🔄️ Orientation:</string>
+    <string name="landscape">Landscape</string>
+    <string name="portrait">Portrait</string>
+
     //INFRAPORT
     <string name="infraport_text">🪄 IR Blaster support:</string>
 
