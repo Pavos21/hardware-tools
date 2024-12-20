@@ -69,6 +69,8 @@
     <string name="battery_capacity_factory_unit">mAh</string>
     <string name="battery_voltage">⚡ Battery voltage:</string>
     <string name="battery_voltage_unit">V</string>
+    <string name="current_consumption">🍽️ Current consumption:</string>
+    <string name="current_consumption_unit">mA</string>"
     <string name="battery_temperature">🌡️ Battery temperature:</string>
     <string name="battery_charge_status">🔌 Charge status:</string>
     <string name="battery_health">👨‍⚕️ Battery health:</string>

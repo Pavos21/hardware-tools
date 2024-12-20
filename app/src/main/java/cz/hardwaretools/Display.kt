@@ -124,7 +124,9 @@ fun getScreenDiagonal(context: Context): String {
     // Convert diagonal to centimeters (1 inch = 2.54 cm)
     val diagonalCm = diagonalInches * 2.54
 
-    return "$diagonalCm%.2f cm / $diagonalInches%.2f in"
+    val formattedString = String.format(Locale.getDefault(), "%.2f cm / %.1f in", diagonalCm, diagonalInches)
+
+    return formattedString
 }
 
 fun getScreenDensity(context: Context): String {

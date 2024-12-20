@@ -143,9 +143,24 @@ fun getBatteryVoltage(context: Context): String {
     } else {
         // Convert millivolts to volts and format to 2 decimal places with a dot
         val voltageInVolts = voltage / 1000.0
-        String.format(Locale.US, "%.2f %s", voltageInVolts, unit)
+        String.format(Locale.getDefault(), "%.2f %s", voltageInVolts, unit)
     }
 }
+
+fun getCurrentConsumption(context: Context): String {
+    val batteryManager = context.getSystemService(Context.BATTERY_SERVICE) as BatteryManager
+
+    val currentNow = batteryManager.getIntProperty(BatteryManager.BATTERY_PROPERTY_CURRENT_NOW)
+
+    return if (currentNow != Integer.MIN_VALUE) {
+        val currentMa = currentNow / 1000f // Convert to mA
+        val unit = context.getString(R.string.current_consumption_unit)
+        String.format(Locale.getDefault(), "%.2f %s", currentMa, unit)
+    } else {
+        "Current information not available"
+    }
+}
+
 
 fun getBatteryTemperature(context: Context): String {
     val intentFilter = IntentFilter(Intent.ACTION_BATTERY_CHANGED)
@@ -161,10 +176,11 @@ fun getBatteryTemperature(context: Context): String {
         val tempInCelsius = temperature / 10.0
         // Convert Celsius to Fahrenheit
         val tempInFahrenheit = tempInCelsius * 9 / 5 + 32
+        val cunit = context.getString(R.string.unit_celsius)
+        val funit = context.getString(R.string.unit_fahrenheit)
         // Format both values to 1 decimal place and append units
-        val celsiusString = String.format(Locale.US, "%.1f %s", tempInCelsius, context.getString(R.string.unit_celsius))
-        val fahrenheitString = String.format(Locale.US, "%.1f %s ", tempInFahrenheit, context.getString(R.string.unit_fahrenheit))
-        "$celsiusString / $fahrenheitString"
+        val formattedString = String.format(Locale.getDefault(), "%.1f %s / %.1f %s", tempInCelsius, cunit, tempInFahrenheit, funit)
+        formattedString
     }
 }
 
@@ -204,7 +220,10 @@ fun getChargingRemainingTime(context: Context): String {
 
         if (timeMinutes > 0) {
             // Format to "hours minutes" (e.g., "1 45")
-            String.format("%d %s %d %s", hours, context.getString(R.string.unit_hours), minutes, context.getString(R.string.unit_minutes))
+            //String.format("%d %s %d %s", hours, context.getString(R.string.unit_hours), minutes, context.getString(R.string.unit_minutes))
+            val h = context.getString(R.string.unit_hours)
+            val m = context.getString(R.string.unit_minutes)
+            "$hours%d $h%s $minutes%d $m%s"
         } else {
             "---"
         }
@@ -250,6 +269,7 @@ fun BatteryView(windowSizeClass: WindowWidthSizeClass) {
     val batteryCapacityCurrent = remember { mutableStateOf(getBatteryCapacityCurrent(context)) }
     val batteryCapacityFactory = remember { mutableStateOf(getBatteryCapacityFactory(context)) }
     val batteryVoltage = remember { mutableStateOf(getBatteryVoltage(context)) }
+    val batteryCurrent = remember { mutableStateOf(getCurrentConsumption(context)) }
     val batteryTemperature = remember { mutableStateOf(getBatteryTemperature(context)) }
     val chargingStatus = remember { mutableStateOf(getChargingStatus(context)) }
     val chargeTimeRemaining = remember { mutableStateOf(getChargingRemainingTime(context)) }
@@ -264,6 +284,7 @@ fun BatteryView(windowSizeClass: WindowWidthSizeClass) {
             batteryCapacityCurrent.value = getBatteryCapacityCurrent(context)
             batteryCapacityFactory.value = getBatteryCapacityFactory(context)
             batteryVoltage.value = getBatteryVoltage(context)
+            batteryCurrent.value = getCurrentConsumption(context)
             batteryTemperature.value = getBatteryTemperature(context)
             chargingStatus.value = getChargingStatus(context)
             chargeTimeRemaining.value = getChargingRemainingTime(context)
@@ -282,6 +303,7 @@ fun BatteryView(windowSizeClass: WindowWidthSizeClass) {
         Pair(R.string.battery_capacity_current, batteryCapacityCurrent.value),
         Pair(R.string.battery_capacity_factory, batteryCapacityFactory.value),
         Pair(R.string.battery_voltage, batteryVoltage.value),
+        Pair(R.string.current_consumption, batteryCurrent.value),
         Pair(R.string.battery_temperature, batteryTemperature.value),
         Pair(R.string.charge_time_remaining, chargeTimeRemaining.value),
         Pair(R.string.battery_health, batteryHealth.value),
