@@ -53,6 +53,7 @@
     <string name="unit_fahrenheit">℉</string>
     <string name="supported">Supported 🥳</string>
     <string name="not_supported">Not supported 😢</string>
+    <string name="cancel">Cancel</string>
 
     //  BATTERY
     <string name="charge_level">🔋 Charge level:</string>
@@ -115,6 +116,15 @@
     //FLASHLIGHT
     <string name="flash_text_on">🔦 Turn flash on:</string>
     <string name="flash_text_off">🔦 Turn flash off:</string>
+
+    //FINGERPRINT
+    <string name="finger_availability">☝️ Fingerprint support:</string>
+    <string name="fingerprint_text">👉 Try fingerprint authentication:</string>
+    <string name="f_title">Biometric Authentication</string>
+    <string name="f_subtitle">You can try to authenticate using your fingerprint</string>
+    <string name="f_success">Authentication succeeded! ✅</string>
+    <string name="f_fail">Authentication failed! ❌</string>
+    <string name="f_error">Authentication error:</string>
 
     //INFRAPORT
     <string name="infraport_text">🪄 IR Blaster support:</string>

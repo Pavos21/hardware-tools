@@ -1,14 +1,26 @@
 [versions]
 agp = "8.7.3"
 kotlin = "1.9.0"
-coreKtx = "1.13.1"
+coreKtx = "1.15.0"
 junit = "4.13.2"
 junitVersion = "1.2.1"
 espressoCore = "3.6.1"
-lifecycleRuntimeKtx = "2.8.5"
-activityCompose = "1.9.2"
-composeBom = "2024.04.01"
-runner = "1.6.1"
+lifecycleRuntimeKtx = "2.8.7"
+activityCompose = "1.9.3"
+composeBom = "2024.12.01"
+
+window = "1.4.0-alpha05"
+window-size = "1.4.0-alpha05"
+lifecycle = "2.9.0-alpha08"
+appupdate = "2.1.0"
+appupdatektx = "2.1.0"
+camera-core = "1.4.1"
+camera-camera2 = "1.4.1"
+camera-lifecycle = "1.4.1"
+camera-view = "1.4.1"
+camera-extensions = "1.4.1"
+order = "0.9.6"
+bio = "1.2.0-alpha05"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -25,7 +37,19 @@ androidx-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-toolin
 androidx-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
 androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
 androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
-androidx-runner = { group = "androidx.test", name = "runner", version.ref = "runner" }
+
+androidx-window = { module = "androidx.window:window", version.ref = "window" }
+androidx-window-size = { module = "androidx.compose.material3:material3-window-size-class", version.ref = "window-size" }
+androidx-lifecycle = { module = "androidx.lifecycle:lifecycle-viewmodel-compose", version.ref = "lifecycle" }
+androidx-appupdate = { module = "com.google.android.play:app-update", version.ref = "appupdate" }
+androidx-appupdate-ktx = { module = "com.google.android.play:app-update-ktx", version.ref = "appupdatektx" }
+androidx-camera-core = { module = "androidx.camera:camera-core", version.ref = "camera-core" }
+androidx-camera-camera2 = { module = "androidx.camera:camera-camera2", version.ref = "camera-camera2" }
+androidx-camera-lifecycle = { module = "androidx.camera:camera-lifecycle", version.ref = "camera-lifecycle" }
+androidx-camera-view = { module = "androidx.camera:camera-view", version.ref = "camera-view" }
+androidx-camera-extensions = { module = "androidx.camera:camera-extensions", version.ref = "camera-extensions" }
+orderlist = { module = "org.burnoutcrew.composereorderable:reorderable", version.ref = "order" }
+androidx-biometric = { module = "androidx.biometric:biometric-ktx", version.ref = "bio" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
