@@ -64,13 +64,6 @@ class Flashlight : ComponentActivity() {
             val windowSizeClass = calculateWindowSizeClass(windowMetrics)
 
             HardwareToolsTheme {
-                // Extract the surface color inside the composable
-                val surfaceColor = MaterialTheme.colorScheme.surface
-
-                // Set status bar color outside of a composable using LaunchedEffect
-                LaunchedEffect(surfaceColor) {
-                    window.statusBarColor = surfaceColor.toArgb()
-                }
 
                 Surface(
                     modifier = Modifier.fillMaxSize()
@@ -174,13 +167,6 @@ fun FlashlightView(windowSizeClass: WindowWidthSizeClass) {
         WindowWidthSizeClass.Medium -> 0.85f
         WindowWidthSizeClass.Expanded -> 0.70f
         else -> 1f
-    }
-
-    val valueText = when (windowSizeClass) {
-        WindowWidthSizeClass.Compact -> 30.dp
-        WindowWidthSizeClass.Medium -> 40.dp
-        WindowWidthSizeClass.Expanded -> 50.dp
-        else -> 30.dp
     }
 
     Scaffold(

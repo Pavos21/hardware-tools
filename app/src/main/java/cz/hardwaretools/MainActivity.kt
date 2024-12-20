@@ -4,10 +4,11 @@ package cz.hardwaretools
 
 import android.content.Context.MODE_PRIVATE
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
+import android.view.WindowInsets
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -32,10 +33,8 @@ import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.material3.windowsizeclass.WindowWidthSizeClass
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
@@ -58,11 +57,24 @@ class MainActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
+        //enableEdgeToEdge()
         appUpdateManager = AppUpdateManagerFactory.create(this)
 
+        /*
         // Make sure system windows fit correctly
-        WindowCompat.setDecorFitsSystemWindows(window, false)
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+            WindowInsets.Type.systemBars()
+            WindowInsets.Type.displayCutout()
+        } else {
+            WindowCompat.setDecorFitsSystemWindows(window, false)
+        }
+        */
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+            WindowInsets.Type.systemBars()
+            WindowInsets.Type.displayCutout()
+        }else{
+            WindowCompat.setDecorFitsSystemWindows(window, false)
+        }
         WindowInsetsControllerCompat(window, window.decorView).isAppearanceLightStatusBars = false
 
         setContent {
@@ -70,13 +82,6 @@ class MainActivity : ComponentActivity() {
             val windowSizeClass = calculateWindowSizeClass(windowMetrics)
 
             HardwareToolsTheme {
-                // Extract the surface color inside the composable
-                val surfaceColor = MaterialTheme.colorScheme.surface
-
-                // Set status bar color outside of a composable using LaunchedEffect
-                LaunchedEffect(surfaceColor) {
-                    window.statusBarColor = surfaceColor.toArgb()
-                }
 
                 Surface(
                     modifier = Modifier.fillMaxSize()

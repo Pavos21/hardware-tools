@@ -39,7 +39,6 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
@@ -54,6 +53,7 @@ import androidx.window.layout.WindowMetricsCalculator
 import cz.hardwaretools.ui.theme.HardwareToolsTheme
 import kotlinx.coroutines.delay
 import java.util.Locale
+import kotlin.math.roundToInt
 
 class Battery : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -69,13 +69,6 @@ class Battery : ComponentActivity() {
             val windowSizeClass = calculateWindowSizeClass(windowMetrics)
 
             HardwareToolsTheme {
-                // Extract the surface color inside the composable
-                val surfaceColor = MaterialTheme.colorScheme.surface
-
-                // Set status bar color outside of a composable using LaunchedEffect
-                LaunchedEffect(surfaceColor) {
-                    window.statusBarColor = surfaceColor.toArgb()
-                }
 
                 Surface(
                     modifier = Modifier.fillMaxSize()
@@ -103,7 +96,7 @@ fun getBatteryCapacityCurrent(context: Context): String {
         if (capacity < 0) {
             "---"  // Return an empty string if capacity is invalid
         } else {
-            "${Math.round(capacity / 1000.0)} $unit"
+            "${(capacity / 1000.0).roundToInt()} $unit"
         }
     } catch (e: Exception) {
         e.printStackTrace()
@@ -220,10 +213,7 @@ fun getChargingRemainingTime(context: Context): String {
 
         if (timeMinutes > 0) {
             // Format to "hours minutes" (e.g., "1 45")
-            //String.format("%d %s %d %s", hours, context.getString(R.string.unit_hours), minutes, context.getString(R.string.unit_minutes))
-            val h = context.getString(R.string.unit_hours)
-            val m = context.getString(R.string.unit_minutes)
-            "$hours%d $h%s $minutes%d $m%s"
+            String.format(Locale.getDefault(), "%d %s %d %s", hours, context.getString(R.string.unit_hours), minutes, context.getString(R.string.unit_minutes))
         } else {
             "---"
         }

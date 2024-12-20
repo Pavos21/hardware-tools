@@ -54,14 +54,6 @@ class Cpu : ComponentActivity() {
 
             HardwareToolsTheme {
 
-                // Extract the surface color inside the composable
-                val surfaceColor = MaterialTheme.colorScheme.surface
-
-                // Set status bar color outside of a composable using LaunchedEffect
-                LaunchedEffect(surfaceColor) {
-                    window.statusBarColor = surfaceColor.toArgb()
-                }
-
                 Surface(
                     modifier = Modifier.fillMaxSize()
                 ) {

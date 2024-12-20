@@ -63,7 +63,6 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.graphicsLayer
-import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.platform.LocalContext
@@ -98,13 +97,6 @@ class Settings : ComponentActivity() {
             val windowSizeClass = calculateWindowSizeClass(windowMetrics)
 
             HardwareToolsTheme {
-                // Extract the surface color inside the composable
-                val surfaceColor = MaterialTheme.colorScheme.surface
-
-                // Set status bar color outside of a composable using LaunchedEffect
-                LaunchedEffect(surfaceColor) {
-                    window.statusBarColor = surfaceColor.toArgb()
-                }
 
                 Surface(
                     modifier = Modifier.fillMaxSize()
@@ -480,7 +472,7 @@ fun LazyItemScope.DraggableItem(
                 translationY = previous
             }
     } else {
-        Modifier.animateItemPlacement(
+        Modifier.animateItem(
             tween(easing = FastOutLinearInEasing)
         )
     }

@@ -69,13 +69,6 @@ class Light : ComponentActivity() {
             val windowSizeClass = calculateWindowSizeClass(windowMetrics)
 
             HardwareToolsTheme {
-                // Extract the surface color inside the composable
-                val surfaceColor = MaterialTheme.colorScheme.surface
-
-                // Set status bar color outside of a composable using LaunchedEffect
-                LaunchedEffect(surfaceColor) {
-                    window.statusBarColor = surfaceColor.toArgb()
-                }
 
                 Surface(
                     modifier = Modifier.fillMaxSize()

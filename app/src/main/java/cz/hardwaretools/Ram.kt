@@ -35,7 +35,6 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
@@ -67,13 +66,6 @@ class Ram : ComponentActivity() {
             val windowSizeClass = calculateWindowSizeClass(windowMetrics)
 
             HardwareToolsTheme {
-                // Extract the surface color inside the composable
-                val surfaceColor = MaterialTheme.colorScheme.surface
-
-                // Set status bar color outside of a composable using LaunchedEffect
-                LaunchedEffect(surfaceColor) {
-                    window.statusBarColor = surfaceColor.toArgb()
-                }
 
                 Surface(
                     modifier = Modifier.fillMaxSize()
@@ -94,9 +86,10 @@ fun getRamTotal(context: Context): String {
 
     // Convert bytes to megabytes and format the result
     val totalRamMB = totalRamBytes / (1024.0 * 1024.0)
-    val decimalFormat = DecimalFormat("#.##", DecimalFormatSymbols(Locale.US)) // Two decimal places
     val unit = context.getString(R.string.ram_total_unit) // Assuming this is "MB"
-    return "${decimalFormat.format(totalRamMB)} $unit"
+    val formatedString = String.format(Locale.getDefault(), "%.2f %s", totalRamMB, unit)
+
+    return formatedString
 }
 
 fun getRamAvailable(context: Context): String {
@@ -113,10 +106,10 @@ fun getRamAvailable(context: Context): String {
     // Calculate percentage of available RAM
     val availableRamPercentage = (availableRamBytes.toDouble() / totalRamBytes.toDouble()) * 100
 
-    val decimalFormat = DecimalFormat("#.##", DecimalFormatSymbols(Locale.US)) // Two decimal places
     val unit = context.getString(R.string.ram_available_unit) // Assuming this is "MB"
+    val formatedString = String.format(Locale.getDefault(), "%.2f %s (%.2f %%)", availableRamMB, unit, availableRamPercentage)
 
-    return "${decimalFormat.format(availableRamMB)} $unit (${decimalFormat.format(availableRamPercentage)} %)"
+    return formatedString
 }
 
 
