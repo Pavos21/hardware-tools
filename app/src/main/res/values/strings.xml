@@ -112,6 +112,10 @@
     <string name="landscape">Landscape</string>
     <string name="portrait">Portrait</string>
 
+    //FLASHLIGHT
+    <string name="flash_text_on">🔦 Turn flash on:</string>
+    <string name="flash_text_off">🔦 Turn flash off:</string>
+
     //INFRAPORT
     <string name="infraport_text">🪄 IR Blaster support:</string>
 
